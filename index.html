@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Weboldal</title>
+  <style>
+    body {
+      background-color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    
+    button {
+      background-color: green;
+      color: white;
+      border: none;
+      padding: 20px 40px;
+      font-size: 24px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    
+    button.clicked {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <button id="statusButton">SZABAD</button>
+
+  <script>
+    const button = document.getElementById('statusButton');
+
+    button.addEventListener('click', function() {
+      button.classList.toggle('clicked');
+      
+      if (button.classList.contains('clicked')) {
+        button.textContent = 'FOGLALT';
+      } else {
+        button.textContent = 'SZABAD';
+      }
+    });
+  </script>
+</body>
+</html>
